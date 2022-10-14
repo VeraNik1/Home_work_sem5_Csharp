@@ -48,13 +48,13 @@ int SumOddPositions(int[] array){
 
 Console.WriteLine("Введите размер массива: ");
 int size = int.Parse(Console.ReadLine()!);
-int[] array38 = GetArray(size, -100000, 100000);
+double[] array38 = GetArrayDouble(size, -100000, 100000);
 Console.WriteLine($"Сгенерированный массив: [{String.Join(", ", array38)}]");
 Console.WriteLine($"Разность максимального и минимального элементов равна {DeltaMaxMin(array38)}");
 
-int DeltaMaxMin(int[] array){
-    int maxEl = array[0];
-    int minEl = array[0];
+double DeltaMaxMin(double[] array){
+    double maxEl = array[0];
+    double minEl = array[0];
     for(int i = 1; i < array.Length; i++){
         if(array[i] > maxEl){
             maxEl = array[i];
@@ -69,6 +69,14 @@ int DeltaMaxMin(int[] array){
 
 int[] GetArray(int size, int minValue, int maxValue){
     int[] res = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+        res[i] = new Random().Next(minValue, maxValue + 1);
+    }
+    return res;
+}
+double[] GetArrayDouble(int size, int minValue, int maxValue){
+    double[] res = new double[size];
     for (int i = 0; i < size; i++)
     {
         res[i] = new Random().Next(minValue, maxValue + 1);
