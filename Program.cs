@@ -5,7 +5,7 @@
 Console.WriteLine("Введите размер массива: ");
 int N = int.Parse(Console.ReadLine()!);
 int[] array34 = GetArray(N, 100, 1000);
-Console.WriteLine($"Массив [{String.Join(", ", array34)}]");
+Console.WriteLine($"Массив из трехзначных чисел: [{String.Join(", ", array34)}]");
 Console.WriteLine($"Колличество четных элементов в массиве равно {CountEvens(array34)}");
 
 int CountEvens(int[] array){
