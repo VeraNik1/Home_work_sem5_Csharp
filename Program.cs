@@ -48,11 +48,7 @@ int SumOddPositions(int[] array){
 
 Console.WriteLine("Введите размер массива: ");
 int size = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Минимально возможное значение элемента массива: ");
-int min = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Максимально возможное значение элемента массива: ");
-int max = int.Parse(Console.ReadLine()!);
-int[] array38 = GetArray(size, min, max);
+int[] array38 = GetArray(size, -100000, +100000);
 Console.WriteLine($"Сгенерированный массив: [{String.Join(", ", array38)}]");
 Console.WriteLine($"Разность максимального и минимального элементов равна {DeltaMaxMin(array38)}");
 
