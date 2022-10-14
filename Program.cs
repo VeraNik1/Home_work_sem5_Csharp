@@ -46,6 +46,30 @@ int SumOddPositions(int[] array){
 /*Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 [3 7 22 2 78] -> 76*/
 
+Console.WriteLine("Введите размер массива: ");
+int size = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Минимально возможное значение элемента массива: ");
+int min = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Максимально возможное значение элемента массива: ");
+int max = int.Parse(Console.ReadLine()!);
+int[] array38 = GetArray(size, min, max);
+Console.WriteLine($"Сгенерированный массив: [{String.Join(", ", array38)}]");
+Console.WriteLine($"Разность максимального и минимального элементов равна {DeltaMaxMin(array38)}");
+
+int DeltaMaxMin(int[] array){
+    int maxEl = array[0];
+    int minEl = array[0];
+    for(int i = 1; i < array.Length; i++){
+        if(array[i] > maxEl){
+            maxEl = array[i];
+        }
+        else if(array[i] < minEl){
+            minEl = array[i];
+        }
+    }
+    return maxEl - minEl;
+}
+
 
 int[] GetArray(int size, int minValue, int maxValue){
     int[] res = new int[size];
